@@ -28,11 +28,3 @@ I'll keep this list updated as things get done.
 - Check the commit history to see what has changed.
 
 This file will be expanded as the project grows.
-
-## Tech
-
-C# (.NET) and [SFML.Net](https://github.com/SFML/SFML.Net). Open source.
-
-## License
-
-See the [LICENSE](LICENSE) file.
