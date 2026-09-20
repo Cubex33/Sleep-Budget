@@ -1,6 +1,7 @@
 ﻿using Cubex33Engine;
 using Cubex33Engine.Debug;
 using Cubex33Engine.SceneManagement;
+using Sleep_Budget;
 
 namespace SleepBudget
 {
@@ -23,6 +24,7 @@ namespace SleepBudget
             SceneManager.CurrentState = GameState.Splash;
 
             new SplashImage(window);
+            new Menu(window);
 
             foreach(var obj in MonoBehavior.Objects)
             {
