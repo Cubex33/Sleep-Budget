@@ -2,9 +2,6 @@
 using Cubex33Engine.SceneManagement;
 using Cubex33Engine.UI;
 using Cubex33Engine.Debug;
-using System.ComponentModel.DataAnnotations;
-
-//TODO: Add icon grid system. Refactoring code
 
 namespace Sleep_Budget
 {
