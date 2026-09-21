@@ -8,10 +8,10 @@
 
         public Vector2f Spacing { get; set; }
 
-        public Grid(Vector2f position, Vector2f cellSize) {
+        public Grid(Vector2f position, Vector2f cellSize, Vector2f? spacing = null) {
             Position = position;
             CellSize = cellSize;
-            Spacing = new Vector2f(0, 0);
+            Spacing = spacing ?? new Vector2f(0, 0);
         }
 
         public Vector2f GetPosition(int collumn, int row)

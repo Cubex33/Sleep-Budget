@@ -5,7 +5,7 @@ public class DesktopIcon : UIElement
     private Sprite sprite;
     private Text text;
 
-    public float LabelSpacing { get; set; } = 3f;
+    public Vector2f IconSize { get; set; } = new Vector2f(64, 64);
 
     public DesktopIcon(Texture texture, Font font, string name)
     {
@@ -16,21 +16,23 @@ public class DesktopIcon : UIElement
             DisplayedString = name,
             CharacterSize = 12
         };
+
+        sprite.Scale = new Vector2f(
+            IconSize.X / texture.Size.X,
+            IconSize.Y / texture.Size.Y
+        );
     }
 
     public override void Draw(RenderWindow window)
     {
         sprite.Position = Position;
-        sprite.Scale = Scale;
 
-        FloatRect spriteBounds = sprite.GetGlobalBounds();
-        FloatRect textBounds = text.GetLocalBounds();
-
-        float centerX = Position.X + spriteBounds.Width / 2f;
+        var spriteBounds = sprite.GetGlobalBounds();
+        var textBounds = text.GetLocalBounds();
 
         text.Position = new Vector2f(
-            centerX - textBounds.Width / 2f,
-            Position.Y + spriteBounds.Height + LabelSpacing
+            Position.X + spriteBounds.Width / 2f - textBounds.Width / 2f,
+            Position.Y + spriteBounds.Height + 3
         );
 
         window.Draw(sprite);

@@ -14,11 +14,13 @@ namespace Sleep_Budget
         Font font = new Font(@"./Assets/Fonts/UpheavalPro.ttf");
 
         Texture thisComputerTexture = new(@"./Assets/Sprites/ThisComputerIcon.png");
-
         Texture trashTexture = new(@"./Assets/Sprites/TrashIcon.png");
+        Texture fileTexture = new(@"./Assets/Sprites/label.png");
 
         DesktopIcon thisComputer;
         DesktopIcon trash;
+        DesktopIcon gameLabel;
+        DesktopIcon settingLabel;
 
         public Menu(RenderWindow _window)
         {
@@ -27,13 +29,17 @@ namespace Sleep_Budget
             var grid = new Grid(new Vector2f(20, 10), new Vector2f(80, 90));
 
             thisComputer = new(thisComputerTexture, font, "This Computer");
-            thisComputer.Scale = new Vector2f(2f, 2f);
 
             trash = new(trashTexture, font, "Trash");
-            trash.Scale = new Vector2f(1.6f, 1.6f);
+
+            gameLabel = new(fileTexture, font, "Game.exe");
+
+            settingLabel = new(fileTexture, font, "Setting.exe");
 
             thisComputer.Position = grid.GetPosition(0, 0);
             trash.Position = grid.GetPosition(0, 1);
+            gameLabel.Position = grid.GetPosition(0, 2);
+            settingLabel.Position = grid.GetPosition(0, 3);
         }
 
         public override void Update()
@@ -49,6 +55,8 @@ namespace Sleep_Budget
 
             thisComputer.Draw(window);
             trash.Draw(window);
+            gameLabel.Draw(window);
+            settingLabel.Draw(window);
 
             Debug.Draw(window);
         }
